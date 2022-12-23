@@ -38,3 +38,13 @@
 
 // var textBox = new TextBox();
 // textBox.Enable();
+
+// Polymorphism: Many Forms - hability of an object of take on many forms.
+
+DrawUIControl(new TextBox());
+DrawUIControl(new CheckBox());
+
+static void DrawUIControl(UIControl control)
+{
+    control.Draw();
+}
