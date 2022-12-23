@@ -23,5 +23,18 @@
 
 // Abstraction: Reduce complexity by hiding unnecessary details
 
-var mailService = new Mail();
-mailService.SendEmail(); // Only this method insteado of 4
+// var mailService = new Mail();
+// mailService.SendEmail(); // Only this method insteado of 4
+
+// Inheritance: is a a mecanism that allows us to reuse code across different classes
+
+// TextBox
+// Button
+// CheckBox
+
+// enable()
+// focus()
+// setPosition()
+
+// var textBox = new TextBox();
+// textBox.Enable();
