@@ -41,10 +41,25 @@
 
 // Polymorphism: Many Forms - hability of an object of take on many forms.
 
-DrawUIControl(new TextBox());
-DrawUIControl(new CheckBox());
+// DrawUIControl(new TextBox());
+// DrawUIControl(new CheckBox());
 
-static void DrawUIControl(UIControl control)
-{
-    control.Draw();
-}
+// static void DrawUIControl(UIControl control)
+// {
+//     control.Draw();
+// }
+
+var editor = new Editor();
+var history = new History();
+
+editor.Content = "a";
+history.States.Push(editor.CreateState());
+
+editor.Content = "b";
+history.States.Push(editor.CreateState());
+
+editor.Content = "c";
+editor.Restore(history.States.Pop());
+editor.Restore(history.States.Pop());
+
+Console.WriteLine(editor.Content);
