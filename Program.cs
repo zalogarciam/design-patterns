@@ -49,42 +49,54 @@
 //     control.Draw();
 // }
 
-var editor = new Editor();
-var history = new History();
+// Memento 
 
-editor.Content = "a";
-history.States.Push(editor.CreateState());
+// var editor = new Editor();
+// var history = new History();
 
-editor.Content = "b";
-history.States.Push(editor.CreateState());
+// editor.Content = "a";
+// history.States.Push(editor.CreateState());
 
-editor.Content = "c";
-editor.Restore(history.States.Pop());
-editor.Restore(history.States.Pop());
+// editor.Content = "b";
+// history.States.Push(editor.CreateState());
 
-Console.WriteLine(editor.Content);
+// editor.Content = "c";
+// editor.Restore(history.States.Pop());
+// editor.Restore(history.States.Pop());
 
-var document = new Document();
-var documentHistory = new DocumentHistory();
+// Console.WriteLine(editor.Content);
 
-document.Content = "Test";
-document.FontName = "Arial";
-document.FontSize = 12;
+// var document = new Document();
+// var documentHistory = new DocumentHistory();
 
-documentHistory.States.Push(document.CreateState());
+// document.Content = "Test";
+// document.FontName = "Arial";
+// document.FontSize = 12;
 
-document.Content = "Test 2";
-document.FontName = "Arial Bold";
-document.FontSize = 14;
-documentHistory.States.Push(document.CreateState());
+// documentHistory.States.Push(document.CreateState());
 
-document.Content = "Test 3";
-document.FontName = "Arial Italic";
-document.FontSize = 16;
+// document.Content = "Test 2";
+// document.FontName = "Arial Bold";
+// document.FontSize = 14;
+// documentHistory.States.Push(document.CreateState());
 
-document.ShowDocument();
+// document.Content = "Test 3";
+// document.FontName = "Arial Italic";
+// document.FontSize = 16;
 
-document.Restore(documentHistory.States.Pop());
-document.Restore(documentHistory.States.Pop());
+// document.ShowDocument();
 
-document.ShowDocument();
+// document.Restore(documentHistory.States.Pop());
+// document.Restore(documentHistory.States.Pop());
+
+// document.ShowDocument();
+
+// State
+
+var canvas = new Canvas();
+canvas.SetCurrentTool(new SelectionTool());
+canvas.MouseDown();
+canvas.MouseUp();
+canvas.SetCurrentTool(new BrushTool());
+canvas.MouseDown();
+canvas.MouseUp();
