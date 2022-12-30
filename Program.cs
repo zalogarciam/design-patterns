@@ -102,8 +102,7 @@
 // canvas.MouseUp();
 
 // Abuse 
-
-var stopWatch = new StopWatch();
-stopWatch.click();
-stopWatch.click();
-stopWatch.click();
+// var stopWatch = new StopWatch();
+// stopWatch.click();
+// stopWatch.click();
+// stopWatch.click();

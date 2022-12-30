@@ -1,18 +1,20 @@
 public class StopWatch
 {
-    private bool isRunning;
+    private State CurrentState = new StoppedState(new StopWatch());
     public void click()
     {
-        if (isRunning)
-        {
-            isRunning = false;
-            Console.WriteLine("Stopped");
-        }
-        else 
-        {
-            isRunning = true;
-            Console.WriteLine("Running");
-        }
+        CurrentState.click();
+
+        // if (isRunning)
+        // {
+        //     isRunning = false;
+        //     Console.WriteLine("Stopped");
+        // }
+        // else 
+        // {
+        //     isRunning = true;
+        //     Console.WriteLine("Running");
+        // }
 
     }
 }
