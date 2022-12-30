@@ -63,3 +63,28 @@ editor.Restore(history.States.Pop());
 editor.Restore(history.States.Pop());
 
 Console.WriteLine(editor.Content);
+
+var document = new Document();
+var documentHistory = new DocumentHistory();
+
+document.Content = "Test";
+document.FontName = "Arial";
+document.FontSize = 12;
+
+documentHistory.States.Push(document.CreateState());
+
+document.Content = "Test 2";
+document.FontName = "Arial Bold";
+document.FontSize = 14;
+documentHistory.States.Push(document.CreateState());
+
+document.Content = "Test 3";
+document.FontName = "Arial Italic";
+document.FontSize = 16;
+
+document.ShowDocument();
+
+document.Restore(documentHistory.States.Pop());
+document.Restore(documentHistory.States.Pop());
+
+document.ShowDocument();
