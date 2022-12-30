@@ -93,10 +93,17 @@
 
 // State -- Open Close Principle
 
-var canvas = new Canvas();
-canvas.SetCurrentTool(new SelectionTool());
-canvas.MouseDown();
-canvas.MouseUp();
-canvas.SetCurrentTool(new BrushTool());
-canvas.MouseDown();
-canvas.MouseUp();
+// var canvas = new Canvas();
+// canvas.SetCurrentTool(new SelectionTool());
+// canvas.MouseDown();
+// canvas.MouseUp();
+// canvas.SetCurrentTool(new BrushTool());
+// canvas.MouseDown();
+// canvas.MouseUp();
+
+// Abuse 
+
+var stopWatch = new StopWatch();
+stopWatch.click();
+stopWatch.click();
+stopWatch.click();
