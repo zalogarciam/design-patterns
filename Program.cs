@@ -49,7 +49,7 @@
 //     control.Draw();
 // }
 
-// Memento 
+// Memento --> Single Responsability
 
 // var editor = new Editor();
 // var history = new History();
@@ -91,7 +91,7 @@
 
 // document.ShowDocument();
 
-// State
+// State -- Open Close Principle
 
 var canvas = new Canvas();
 canvas.SetCurrentTool(new SelectionTool());
