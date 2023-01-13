@@ -101,7 +101,10 @@
 // canvas.MouseDown();
 // canvas.MouseUp();
 
-// Abuse 
+
+// Abuse: Design smell
+// Simplicity is the ultimate sophistication
+
 // var stopWatch = new StopWatch();
 // stopWatch.click();
 // stopWatch.click();
