@@ -115,12 +115,15 @@
 // travel.GetETA();
 
 // Iterator -- changing the internals of an object should not affect its consumers.
-var browserHistory = new BrowserHistory();
+var browserHistory = new BrowserHistory<string>();
 browserHistory.Push("a");
 browserHistory.Push("b");
 browserHistory.Push("c");
 
-foreach (var url in browserHistory.GetUrls)
+var iterator = browserHistory.CreateIterator();
+while (iterator.HasNext())
 {
+    var url = iterator.Current();
     Console.WriteLine(url);
+    iterator.Next();
 }
