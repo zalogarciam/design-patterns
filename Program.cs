@@ -109,3 +109,7 @@
 // stopWatch.click();
 // stopWatch.click();
 // stopWatch.click();
+
+var travel = new TravelMode(new DrivingService());
+travel.GetDirection();
+travel.GetETA();
