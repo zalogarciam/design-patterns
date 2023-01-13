@@ -110,6 +110,17 @@
 // stopWatch.click();
 // stopWatch.click();
 
-var travel = new TravelMode(new DrivingService());
-travel.GetDirection();
-travel.GetETA();
+// var travel = new TravelMode(new DrivingService());
+// travel.GetDirection();
+// travel.GetETA();
+
+// Iterator -- changing the internals of an object should not affect its consumers.
+var browserHistory = new BrowserHistory();
+browserHistory.Push("a");
+browserHistory.Push("b");
+browserHistory.Push("c");
+
+foreach (var url in browserHistory.GetUrls)
+{
+    Console.WriteLine(url);
+}
