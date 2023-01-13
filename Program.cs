@@ -1,4 +1,4 @@
-﻿// Coupling: how much a class is decoupled or depends on another class. Interfaces helps
+﻿// Coupling: how much a class is decoupled or depends on another class. Interfaces helps --> loosely coupled applications
 
 // User user = new User("John Smith");
 // user.SayHello();
@@ -128,15 +128,18 @@
 //     iterator.Next();
 // }
 
-var productList = new ProductCollection();
-productList.Add(new Product(1, "A"));
-productList.Add(new Product(2, "B"));
-productList.Add(new Product(3, "C"));
+// var productList = new ProductCollection();
+// productList.Add(new Product(1, "A"));
+// productList.Add(new Product(2, "B"));
+// productList.Add(new Product(3, "C"));
 
-var productIterator = productList.CreateIterator();
-while (productIterator.HasNext())
-{
-    var product = productIterator.Current();
-    Console.WriteLine(product.ToString());
-    productIterator.Next();
-}
+// var productIterator = productList.CreateIterator();
+// while (productIterator.HasNext())
+// {
+//     var product = productIterator.Current();
+//     Console.WriteLine(product.ToString());
+//     productIterator.Next();
+// }
+
+var imageStorage = new ImageStorage(new JpegCompressor(), new BlackAndWhiteFilter());
+imageStorage.Store("a");
