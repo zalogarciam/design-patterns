@@ -1,15 +1,11 @@
-public class ImageStorage 
+public class ImageStorage
 {
-    private ICompressor Compressor;
-    private IFilter Filter;
-
-    public ImageStorage(ICompressor Compressor, IFilter Filter)
+    public ImageStorage()
     {
-        this.Compressor = Compressor;
-        this.Filter = Filter;
+
     }
 
-    public void Store(string filename)
+    public void Store(string filename, ICompressor Compressor, IFilter Filter)
     {
         Compressor.Compress(filename);
         Filter.Apply(filename);

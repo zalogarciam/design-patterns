@@ -141,5 +141,6 @@
 //     productIterator.Next();
 // }
 
-var imageStorage = new ImageStorage(new JpegCompressor(), new BlackAndWhiteFilter());
-imageStorage.Store("a");
+var imageStorage = new ImageStorage();
+imageStorage.Store("a", new JpegCompressor(), new BlackAndWhiteFilter());
+imageStorage.Store("a", new PngCompressor(), new BlackAndWhiteFilter());
