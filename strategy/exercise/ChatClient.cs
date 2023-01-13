@@ -1,21 +1,13 @@
 public class ChatClient
 {
-    private String EncryptionAlgorithm;
-
-    public ChatClient(String encryptionAlgorithm)
+    private IEncryptionAlgorithm EncryptionAlgorithm;
+    public ChatClient(IEncryptionAlgorithm encryptionAlgorithm)
     {
         this.EncryptionAlgorithm = encryptionAlgorithm;
     }
 
-    public void send(String message)
+    public void Send(String message)
     {
-        if (EncryptionAlgorithm == "DES")
-            Console.WriteLine("Encrypting message using DES");
-        else if (EncryptionAlgorithm == "AES")
-            Console.WriteLine("Encrypting message using AES");
-        else
-            throw new Exception("Unsupported encryption algorithm");
-
-        Console.WriteLine("Sending the encrypted message...");
+        this.EncryptionAlgorithm.Encrypt();
     }
 }
