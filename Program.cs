@@ -115,15 +115,28 @@
 // travel.GetETA();
 
 // Iterator -- changing the internals of an object should not affect its consumers.
-var browserHistory = new BrowserHistory<string>();
-browserHistory.Push("a");
-browserHistory.Push("b");
-browserHistory.Push("c");
+// var browserHistory = new BrowserHistory<string>();
+// browserHistory.Push("a");
+// browserHistory.Push("b");
+// browserHistory.Push("c");
 
-var iterator = browserHistory.CreateIterator();
-while (iterator.HasNext())
+// var iterator = browserHistory.CreateIterator();
+// while (iterator.HasNext())
+// {
+//     var url = iterator.Current();
+//     Console.WriteLine(url);
+//     iterator.Next();
+// }
+
+var productList = new ProductCollection();
+productList.Add(new Product(1, "A"));
+productList.Add(new Product(2, "B"));
+productList.Add(new Product(3, "C"));
+
+var productIterator = productList.CreateIterator();
+while (productIterator.HasNext())
 {
-    var url = iterator.Current();
-    Console.WriteLine(url);
-    iterator.Next(); 
+    var product = productIterator.Current();
+    Console.WriteLine(product.ToString());
+    productIterator.Next();
 }

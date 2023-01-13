@@ -1,19 +1,19 @@
 public class Product
 {
-    private int id;
-    private String name;
+    private int Id;
+    private String Name;
 
     public Product(int id, String name)
     {
-        this.id = id;
-        this.name = name;
+        this.Id = id;
+        this.Name = name;
     }
 
     public override String ToString()
     {
         return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                " Id=" + Id +
+                ", Name='" + Name + '\'' +
                 '}';
     }
 }
