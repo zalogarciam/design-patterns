@@ -1,5 +1,6 @@
 public class BrowserHistory<T>
 {
+    // If I change List to another DataStructure. My app can break here but outside
     private List<T> Urls = new List<T>();
 
     public void Push(T url)

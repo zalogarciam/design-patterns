@@ -125,5 +125,5 @@ while (iterator.HasNext())
 {
     var url = iterator.Current();
     Console.WriteLine(url);
-    iterator.Next();
+    iterator.Next(); 
 }
