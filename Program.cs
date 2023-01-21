@@ -141,9 +141,12 @@
 //     productIterator.Next();
 // }
 
-var imageStorage = new ImageStorage();
-imageStorage.Store("a", new JpegCompressor(), new BlackAndWhiteFilter());
-imageStorage.Store("a", new PngCompressor(), new BlackAndWhiteFilter());
+// var imageStorage = new ImageStorage();
+// imageStorage.Store("a", new JpegCompressor(), new BlackAndWhiteFilter());
+// imageStorage.Store("a", new PngCompressor(), new BlackAndWhiteFilter());
 
-var chatClient = new ChatClient(new AesEncryptionAlgorithm());
-chatClient.Send("Test");
+// var chatClient = new ChatClient(new AesEncryptionAlgorithm());
+// chatClient.Send("Test");
+
+var task = new TransferMoneyTask(new AuditTrail());
+task.Execute();
