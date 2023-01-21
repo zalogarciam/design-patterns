@@ -148,5 +148,5 @@
 // var chatClient = new ChatClient(new AesEncryptionAlgorithm());
 // chatClient.Send("Test");
 
-var task = new TransferMoneyTask(new AuditTrail());
+var task = new TransferMoneyTask();
 task.Execute();
