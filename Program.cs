@@ -163,3 +163,16 @@ var compositeCommand = new CompositeCommand();
 compositeCommand.Add(new ResizeCommand());
 compositeCommand.Add(new BlackAndWhiteCommand());
 compositeCommand.Execute();
+
+var history = new HistoryCommand();
+var document = new HtmlDocument("Hello world!");
+
+var boldCommand = new BoldCommand(document, history);
+boldCommand.Execute();
+Console.WriteLine(document.Content);
+// boldCommand.Unexecute();
+// Console.WriteLine(document.Content);
+
+var undoCommand = new UndoCommand(history);
+undoCommand.Execute();
+Console.WriteLine(document.Content);
