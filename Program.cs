@@ -154,25 +154,40 @@
 // var window = new ReportWindow();
 // window.Close();
 
-var service = new CustomerService();
-var command = new AddCustomerCommand(service);
-var button = new Button(command);
-button.Click();
+// var service = new CustomerService();
+// var command = new AddCustomerCommand(service);
+// var button = new Button(command);
+// button.Click();
 
-var compositeCommand = new CompositeCommand();
-compositeCommand.Add(new ResizeCommand());
-compositeCommand.Add(new BlackAndWhiteCommand());
-compositeCommand.Execute();
+// var compositeCommand = new CompositeCommand();
+// compositeCommand.Add(new ResizeCommand());
+// compositeCommand.Add(new BlackAndWhiteCommand());
+// compositeCommand.Execute();
 
-var history = new HistoryCommand();
-var document = new HtmlDocument("Hello world!");
+// var history = new HistoryCommand();
+// var document = new HtmlDocument("Hello world!");
 
-var boldCommand = new BoldCommand(document, history);
-boldCommand.Execute();
-Console.WriteLine(document.Content);
-// boldCommand.Unexecute();
+// var boldCommand = new BoldCommand(document, history);
+// boldCommand.Execute();
 // Console.WriteLine(document.Content);
+// // boldCommand.Unexecute();
+// // Console.WriteLine(document.Content);
+
+// var undoCommand = new UndoCommand(history);
+// undoCommand.Execute();
+// Console.WriteLine(document.Content);
+
+var videoEditor = new VideoEditor();
+var history = new HistoryCommand();
+
+var labelCommand = new LabelCommand("Title", videoEditor, history);
+labelCommand.Execute();
+Console.WriteLine(videoEditor.ToString());
+
+// videoEditor.SetText("End");
+// labelCommand.Execute();
+// Console.WriteLine(videoEditor.GetText());
 
 var undoCommand = new UndoCommand(history);
 undoCommand.Execute();
-Console.WriteLine(document.Content);
+Console.WriteLine(videoEditor.ToString());

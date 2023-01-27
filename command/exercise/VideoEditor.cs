@@ -1,8 +1,12 @@
-
 public class VideoEditor
 {
-    private float Contrat = 0.5f;
+    private float Contrast;
     private string Text;
+
+    public string GetText()
+    {
+        return this.Text;
+    }
 
     public void SetText(String text)
     {
@@ -16,18 +20,18 @@ public class VideoEditor
 
     public float GetContrast()
     {
-        return Contrat;
+        return Contrast;
     }
 
     public void SetContrast(float contrast)
     {
-        this.Contrat = contrast;
+        this.Contrast = contrast;
     }
 
     public override String ToString()
     {
         return "VideoEditor{" +
-                "contrast=" + Contrat +
+                "contrast=" + Contrast +
                 ", text='" + Text + '\'' +
                 '}';
     }
