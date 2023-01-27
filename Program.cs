@@ -151,5 +151,10 @@
 // var task = new TransferMoneyTask();
 // task.Execute();
 
-var window = new ReportWindow();
-window.Close();
+// var window = new ReportWindow();
+// window.Close();
+
+var service = new CustomerService();
+var command = new AddCustomerCommand(service);
+var button = new Button(command);
+button.Click();
