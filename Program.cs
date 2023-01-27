@@ -158,3 +158,8 @@ var service = new CustomerService();
 var command = new AddCustomerCommand(service);
 var button = new Button(command);
 button.Click();
+
+var compositeCommand = new CompositeCommand();
+compositeCommand.Add(new ResizeCommand());
+compositeCommand.Add(new BlackAndWhiteCommand());
+compositeCommand.Execute();
