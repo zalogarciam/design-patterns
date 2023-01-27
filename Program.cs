@@ -183,11 +183,22 @@ var history = new HistoryCommand();
 var labelCommand = new LabelCommand("Title", videoEditor, history);
 labelCommand.Execute();
 Console.WriteLine(videoEditor.ToString());
+Console.WriteLine(history.Size());
 
-// videoEditor.SetText("End");
-// labelCommand.Execute();
-// Console.WriteLine(videoEditor.GetText());
+var contrastCommand = new ContrastCommand(1, videoEditor, history);
+contrastCommand.Execute();
+Console.WriteLine(videoEditor.ToString());
+Console.WriteLine(history.Size());
 
 var undoCommand = new UndoCommand(history);
 undoCommand.Execute();
 Console.WriteLine(videoEditor.ToString());
+Console.WriteLine(history.Size());
+
+undoCommand.Execute();
+Console.WriteLine(videoEditor.ToString());
+Console.WriteLine(history.Size());
+
+undoCommand.Execute();
+Console.WriteLine(videoEditor.ToString());
+Console.WriteLine(history.Size());

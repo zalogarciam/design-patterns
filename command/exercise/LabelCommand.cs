@@ -1,4 +1,4 @@
-public class LabelCommand : IUndoableCommand
+public class LabelCommand : AbstractUndoableCommand
 {
     private string Text;
     private string PreviousText;
@@ -7,22 +7,21 @@ public class LabelCommand : IUndoableCommand
 
     private HistoryCommand History;
 
-    public LabelCommand(string text, VideoEditor videoEditor, HistoryCommand history)
+    public LabelCommand(string text, VideoEditor videoEditor, HistoryCommand history) : base (videoEditor, history)
     {
         VideoEditor = videoEditor;
         History = history;
         this.Text = text;
     }
 
-    public void Execute()
-    {
-        PreviousText = VideoEditor.GetText();
-        VideoEditor.SetText(Text);
-        History.Push(this);
-    }
-
-    public void Unexecute()
+    protected override void doUnexecute()
     {
         VideoEditor.RemoveText();
+    }
+
+    protected override void doExecute()
+    {
+        VideoEditor.SetText(Text);
+
     }
 }

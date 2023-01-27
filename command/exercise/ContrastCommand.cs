@@ -1,25 +1,26 @@
-public class ContrastCommand : IUndoableCommand
+public class ContrastCommand : AbstractUndoableCommand
 {
     private float Contrast;
-    private float prevContrast;
+    private float PrevContrast;
     private VideoEditor VideoEditor;
 
     private HistoryCommand History;
 
-    public ContrastCommand(float contrast, VideoEditor videoEditor, HistoryCommand history)
+    public ContrastCommand(float contrast, VideoEditor videoEditor, HistoryCommand history) : base(videoEditor, history)
     {
         VideoEditor = videoEditor;
         History = history;
+        this.PrevContrast = videoEditor.GetContrast();
         this.Contrast = contrast;
     }
 
-    public void Execute()
+    protected override void doUnexecute()
     {
-        VideoEditor.SetContrast(Contrast);
+        VideoEditor.SetContrast(PrevContrast);
     }
 
-    public void Unexecute()
+    protected override void doExecute()
     {
-        VideoEditor.SetContrast(prevContrast);
+        VideoEditor.SetContrast(Contrast);
     }
 }
