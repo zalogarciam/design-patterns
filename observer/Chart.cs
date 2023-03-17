@@ -1,7 +1,7 @@
-public class Chart : IObserver
+public class Chart<T> : IObserver<T>
 {
-    public void Update()
+    public void Update(T n)
     {
-        Console.WriteLine("Chart updated");
+        Console.WriteLine("Chart updated: " + n);
     }
 }

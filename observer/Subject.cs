@@ -1,18 +1,17 @@
-public class Subject 
+public class Subject<T>
 {
-    private List<IObserver> Observers = new List<IObserver>();
-    public void AddObserver(IObserver observer)
+    private List<IObserver<T>> Observers = new List<IObserver<T>>();
+    public void AddObserver(IObserver<T> observer)
     {
         Observers.Add(observer);
     }
-
-    public void RemoveObserver(IObserver observer)
+    public void RemoveObserver(IObserver<T> observer)
     {
         Observers.Remove(observer);
     }
-    public void NotifyObservers()
+    public void NotifyObservers(T n)
     {
         foreach (var observer in Observers)
-            observer.Update();
+            observer.Update(n);
     }
 }

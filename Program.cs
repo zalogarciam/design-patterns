@@ -203,12 +203,12 @@
 // Console.WriteLine(videoEditor.ToString());
 // Console.WriteLine(history.Size());
 
-var dataSource = new DataSource();
-var sheet1 = new SpreadSheet();
-var sheet2 = new SpreadSheet();
-var chart = new Chart();
+var dataSource = new DataSource<int>();
+var sheet1 = new SpreadSheet<int>();
+var sheet2 = new SpreadSheet<int>();
+var chart = new Chart<int>();
 
 dataSource.AddObserver(sheet1);
 dataSource.AddObserver(sheet2);
 dataSource.AddObserver(chart);
-dataSource.N = 1;
+dataSource.SetN(1);

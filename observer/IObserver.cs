@@ -1,3 +1,3 @@
-public interface IObserver {
-    void Update();
+public interface IObserver<T> {
+    void Update(T n);
 }

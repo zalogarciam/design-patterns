@@ -1,7 +1,7 @@
-public class SpreadSheet : IObserver
+public class SpreadSheet<T> : IObserver<T>
 {
-    public void Update()
+    public void Update(T n)
     {
-        Console.WriteLine("Spreadsheet updated");
+        Console.WriteLine("Spreadsheet updated: " + n);
     }
 }

@@ -1,14 +1,9 @@
-public class DataSource : Subject
+public class DataSource<T> : Subject<T>
 {
-    private int n;
+    private T n;
 
-    public int N
-    {
-        get { return n; }
-        set
-        {
-            n = N;
-            NotifyObservers();
-        }
+    public void SetN(T n){
+        this.n = n;
+        NotifyObservers(n);
     }
 }
