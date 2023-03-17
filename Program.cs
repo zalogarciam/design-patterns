@@ -177,28 +177,38 @@
 // undoCommand.Execute();
 // Console.WriteLine(document.Content);
 
-var videoEditor = new VideoEditor();
-var history = new HistoryCommand();
+// var videoEditor = new VideoEditor();
+// var history = new HistoryCommand();
 
-var labelCommand = new LabelCommand("Title", videoEditor, history);
-labelCommand.Execute();
-Console.WriteLine(videoEditor.ToString());
-Console.WriteLine(history.Size());
+// var labelCommand = new LabelCommand("Title", videoEditor, history);
+// labelCommand.Execute();
+// Console.WriteLine(videoEditor.ToString());
+// Console.WriteLine(history.Size());
 
-var contrastCommand = new ContrastCommand(1, videoEditor, history);
-contrastCommand.Execute();
-Console.WriteLine(videoEditor.ToString());
-Console.WriteLine(history.Size());
+// var contrastCommand = new ContrastCommand(1, videoEditor, history);
+// contrastCommand.Execute();
+// Console.WriteLine(videoEditor.ToString());
+// Console.WriteLine(history.Size());
 
-var undoCommand = new UndoCommand(history);
-undoCommand.Execute();
-Console.WriteLine(videoEditor.ToString());
-Console.WriteLine(history.Size());
+// var undoCommand = new UndoCommand(history);
+// undoCommand.Execute();
+// Console.WriteLine(videoEditor.ToString());
+// Console.WriteLine(history.Size());
 
-undoCommand.Execute();
-Console.WriteLine(videoEditor.ToString());
-Console.WriteLine(history.Size());
+// undoCommand.Execute();
+// Console.WriteLine(videoEditor.ToString());
+// Console.WriteLine(history.Size());
 
-undoCommand.Execute();
-Console.WriteLine(videoEditor.ToString());
-Console.WriteLine(history.Size());
+// undoCommand.Execute();
+// Console.WriteLine(videoEditor.ToString());
+// Console.WriteLine(history.Size());
+
+var dataSource = new DataSource();
+var sheet1 = new SpreadSheet();
+var sheet2 = new SpreadSheet();
+var chart = new Chart();
+
+dataSource.AddObserver(sheet1);
+dataSource.AddObserver(sheet2);
+dataSource.AddObserver(chart);
+dataSource.N = 1;
