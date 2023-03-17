@@ -203,12 +203,30 @@
 // Console.WriteLine(videoEditor.ToString());
 // Console.WriteLine(history.Size());
 
-var dataSource = new DataSource<int>();
-var sheet1 = new SpreadSheet<int>();
-var sheet2 = new SpreadSheet<int>();
-var chart = new Chart<int>();
+// var dataSource = new DataSource<int>();
+// var sheet1 = new SpreadSheet<int>();
+// var sheet2 = new SpreadSheet<int>();
+// var chart = new Chart<int>();
 
-dataSource.AddObserver(sheet1);
-dataSource.AddObserver(sheet2);
-dataSource.AddObserver(chart);
-dataSource.SetN(1);
+// dataSource.AddObserver(sheet1);
+// dataSource.AddObserver(sheet2);
+// dataSource.AddObserver(chart);
+// dataSource.SetN(1);
+
+// var dataSource = new DataSource1<int>();
+// var sheet1 = new SpreadSheet1<int>(dataSource);
+// var sheet2 = new SpreadSheet1<int>(dataSource);
+// var chart = new Chart1<int>(dataSource);
+
+// dataSource.AddObserver(sheet1);
+// dataSource.AddObserver(sheet2);
+// dataSource.AddObserver(chart);
+// dataSource.SetN(1);
+
+var stock = new Stock<StockModel>();
+var statusBar = new StatusBar<StockModel>();
+var stockListView = new StockListView<StockModel>();
+
+stock.AddObserver(statusBar);
+stock.AddObserver(stockListView);
+stock.SetStock(new StockModel(150, "Test"));
