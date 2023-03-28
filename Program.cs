@@ -223,10 +223,15 @@
 // dataSource.AddObserver(chart);
 // dataSource.SetN(1);
 
-var stock = new Stock<StockModel>();
-var statusBar = new StatusBar<StockModel>();
-var stockListView = new StockListView<StockModel>();
+// var stock = new Stock<StockModel>();
+// var statusBar = new StatusBar<StockModel>();
+// var stockListView = new StockListView<StockModel>();
 
-stock.AddObserver(statusBar);
-stock.AddObserver(stockListView);
-stock.SetStock(new StockModel(150, "Test"));
+// stock.AddObserver(statusBar);
+// stock.AddObserver(stockListView);
+// stock.SetStock(new StockModel(150, "Test"));
+
+// Mediator
+
+var dialog = new ArticuleDialogBox();
+dialog.SimulateUserInteraction();
