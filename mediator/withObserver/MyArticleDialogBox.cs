@@ -11,8 +11,7 @@ public class MyArticuleDialogBox
         saveButton = new MyButton();
 
         articlesListBox.AddEventHandler(new MyListBoxConcrete(this));
-        titleTextBox.AddEventHandler(new MyListBoxConcrete(this));
-        saveButton.AddEventHandler(new MyListBoxConcrete(this));
+        titleTextBox.AddEventHandler(new MyTextBoxConcrete(this));
     }
 
     public class MyListBoxConcrete : IEventHandler
@@ -54,17 +53,18 @@ public class MyArticuleDialogBox
 
     public void SimulateUserInteraction()
     {
-        // articlesListBox.setSelection("Article 1");
+        articlesListBox.setSelection("Article 1");
         titleTextBox.setContent(string.Empty);
-        // articlesListBox.setSelection("Article 2");
-        // Console.WriteLine("TextBox: " + titleTextBox.getContent());
-        // Console.WriteLine("Button: " + saveButton.getEnabled());
+        articlesListBox.setSelection("Article 2");
+        Console.WriteLine("TextBox: " + titleTextBox.getContent());
+        Console.WriteLine("Button: " + saveButton.getEnabled());
     }
 
     private void TitleChanged()
     {
         var content = titleTextBox.getContent();
         var isEmpty = string.IsNullOrEmpty(content);
+        saveButton.setEnabled(!isEmpty);
     }
 
     private void ArticleSelected()
@@ -72,4 +72,5 @@ public class MyArticuleDialogBox
         titleTextBox.setContent(articlesListBox.getSelection());
         saveButton.setEnabled(true);
     }
+
 }

@@ -10,7 +10,6 @@ public abstract class MyControl
     {
         foreach (var observer in EventHandlers)
         {
-            Console.WriteLine("Test");
             observer.Handle();
         }
 
