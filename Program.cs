@@ -233,5 +233,8 @@
 
 // Mediator
 
-var dialog = new MyArticuleDialogBox();
+// var dialog = new MyArticuleDialogBox();
+// dialog.SimulateUserInteraction();
+
+var dialog = new SignUpDialogBox();
 dialog.SimulateUserInteraction();

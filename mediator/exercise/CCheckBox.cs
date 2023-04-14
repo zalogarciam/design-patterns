@@ -1,12 +1,15 @@
 
-public class CCheckBox : CUIControl {
+public class CCheckBox : CUIControl
+{
     private bool isChecked;
-
-    public bool getChecked() {
+    public bool getChecked()
+    {
         return isChecked;
     }
 
-    public void setChecked(bool check) {
+    public void setChecked(bool check)
+    {
         isChecked = check;
+        NotifyEventHandlers();
     }
 }

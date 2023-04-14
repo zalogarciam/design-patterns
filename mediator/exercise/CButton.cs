@@ -1,7 +1,6 @@
 public class CButton : CUIControl
 {
     private bool isEnabled;
-
     public bool getEnabled()
     {
         return isEnabled;
@@ -10,5 +9,6 @@ public class CButton : CUIControl
     public void setEnabled(bool enabled)
     {
         isEnabled = enabled;
+        NotifyEventHandlers();
     }
 }
