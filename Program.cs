@@ -236,5 +236,13 @@
 // var dialog = new MyArticuleDialogBox();
 // dialog.SimulateUserInteraction();
 
-var dialog = new SignUpDialogBox();
-dialog.SimulateUserInteraction();
+// var dialog = new SignUpDialogBox();
+// dialog.SimulateUserInteraction();
+
+// Chain of Responsability
+
+var compressor = new Compressor(null);
+var logger = new Logger(compressor);
+var auth = new Authenticator(logger);
+var server = new WebServer(auth);
+server.Handle(new HttpRequest("Admin", "1234"));

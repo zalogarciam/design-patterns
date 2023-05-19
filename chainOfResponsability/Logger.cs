@@ -1,7 +1,12 @@
-public class Logger
+public class Logger : Handler
 {
-    public void Log(HttpRequest request)
+    public Logger(Handler next) : base(next)
+    {
+    }
+
+    public override bool DoHandle(HttpRequest request)
     {
         Console.WriteLine("Log");
+        return false;
     }
 }
