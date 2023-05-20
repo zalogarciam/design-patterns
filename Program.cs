@@ -246,3 +246,9 @@ var logger = new Logger(compressor);
 var auth = new Authenticator(logger);
 var server = new WebServer(auth);
 server.Handle(new HttpRequest("Admin", "1234"));
+
+var quickBook = new QuickBookHelper(null);
+var number = new NumberHelper(quickBook);
+var excel = new ExcelHelper(number);
+var dataReader = new DataReader(excel);
+dataReader.Handle(new DataRequest("file.qbw .xls .numbers"));
