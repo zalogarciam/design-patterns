@@ -259,3 +259,4 @@ var document = new HtmlDocumento();
 document.Add(new HeadingNode());
 document.Add(new AnchorNode());
 document.Execute(new HighLightOperation());
+document.Execute(new PlainTextOperation());
