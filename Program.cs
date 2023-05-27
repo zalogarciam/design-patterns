@@ -241,14 +241,21 @@
 
 // Chain of Responsability
 
-var compressor = new Compressor(null);
-var logger = new Logger(compressor);
-var auth = new Authenticator(logger);
-var server = new WebServer(auth);
-server.Handle(new HttpRequest("Admin", "1234"));
+// var compressor = new Compressor(null);
+// var logger = new Logger(compressor);
+// var auth = new Authenticator(logger);
+// var server = new WebServer(auth);
+// server.Handle(new HttpRequest("Admin", "1234"));
 
-var quickBook = new QuickBookHelper(null);
-var number = new NumberHelper(quickBook);
-var excel = new ExcelHelper(number);
-var dataReader = new DataReader(excel);
-dataReader.Handle(new DataRequest("file.qbw .xls .numbers"));
+// var quickBook = new QuickBookHelper(null);
+// var number = new NumberHelper(quickBook);
+// var excel = new ExcelHelper(number);
+// var dataReader = new DataReader(excel);
+// dataReader.Handle(new DataRequest("file.qbw .xls .numbers"));
+
+// Visitor
+
+var document = new HtmlDocumento();
+document.Add(new HeadingNode());
+document.Add(new AnchorNode());
+document.HighLight();
