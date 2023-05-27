@@ -1,3 +1,3 @@
 public interface IHtmlNode {
-    void HighLight();
+    void execute(IOperation operation);
 }

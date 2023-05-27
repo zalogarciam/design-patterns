@@ -1,7 +1,8 @@
 public class AnchorNode : IHtmlNode
 {
-    public void HighLight()
+    public void execute(IOperation operation)
     {
-        Console.WriteLine("Highlighting Anchor Node");
+        operation.Apply(this);
     }
+
 }

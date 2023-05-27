@@ -9,9 +9,9 @@ public class HtmlDocumento
         Nodes.Add(node);
     }
 
-    public void HighLight()
-    {
-        foreach (var node in Nodes)
-            node.HighLight();
+    public void Execute(IOperation operation){
+        foreach(var node in Nodes){
+            node.execute(operation);
+        }
     }
 }

@@ -1,7 +1,7 @@
 public class HeadingNode : IHtmlNode
 {
-    public void HighLight()
+    public void execute(IOperation operation)
     {
-        Console.WriteLine("Highlighting Heading Node");
+        operation.Apply(this);
     }
 }
