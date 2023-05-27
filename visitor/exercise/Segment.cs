@@ -1,14 +1,6 @@
 
-public class Segment {
-    public void reduceNoise() {
-        Console.WriteLine("Reduce noise");
-    }
+public interface ISegment
+{
+    void execute(IEditingOperation operation);
 
-    public void addReverb() {
-        Console.WriteLine("Add reverb");
-    }
-
-    public void normalize() {
-        Console.WriteLine("Normalize");
-    }
 }

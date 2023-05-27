@@ -1,6 +1,6 @@
 public class WavFile
 {
-    private List<Segment> segments = new List<Segment>();
+    private List<ISegment> segments = new List<ISegment>();
 
     public static WavFile read(String fileName)
     {
@@ -11,24 +11,13 @@ public class WavFile
         wavFile.segments.Add(new FactSegment());
         wavFile.segments.Add(new FactSegment());
 
+
+        wavFile.segments[0].execute(new NormalizeOperation());
+        wavFile.segments[1].execute(new AddReverbOperation());
+        wavFile.segments[2].execute(new ReduceNoiseOperation());
+        wavFile.segments[3].execute(new NormalizeOperation());
+
         return wavFile;
     }
 
-    public void reduceNoise()
-    {
-        foreach (var segment in segments)
-            segment.reduceNoise();
-    }
-
-    public void addReverb()
-    {
-        foreach (var segment in segments)
-            segment.addReverb();
-    }
-
-    public void normalize()
-    {
-        foreach (var segment in segments)
-            segment.normalize();
-    }
 }
