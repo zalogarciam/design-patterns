@@ -298,9 +298,14 @@
 
 // Adapter
 
-var imageView = new ImageView(new Image());
-imageView.Apply(new CaramelFilter(new Caramel())); // Adapter
+// var imageView = new ImageView(new Image());
+// imageView.Apply(new CaramelFilter(new Caramel())); // Adapter
 
-var emailClient = new EmailClient();
-emailClient.addProvider(new GmailProvider(new GmailClient()));
-emailClient.downloadEmails();
+// var emailClient = new EmailClient();
+// emailClient.addProvider(new GmailProvider(new GmailClient()));
+// emailClient.downloadEmails();
+
+// Decorator
+
+var cloudStream = new EncryptedCloudStream();
+cloudStream.write("Data");
