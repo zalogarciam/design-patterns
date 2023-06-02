@@ -1,6 +1,6 @@
-public class CloudStream
+public class CloudStream : IStream
 {
-    public virtual void write(String data)
+    public void write(String data)
     {
         System.Console.WriteLine("Storing..." + data);
     }

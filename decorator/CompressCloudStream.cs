@@ -1,10 +1,16 @@
-public class CompressCloudStream : CloudStream
+public class CompressCloudStream : IStream
 {
+    private IStream stream;
 
-    public override void write(string data)
+    public CompressCloudStream(IStream stream)
+    {
+        this.stream = stream;
+    }
+
+    public void write(string data)
     {
         var compressed = compress(data);
-        base.write(data);
+        stream.write(compressed);
     }
 
     private String compress(String data)

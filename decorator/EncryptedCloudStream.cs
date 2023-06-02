@@ -1,9 +1,16 @@
-public class EncryptedCloudStream : CloudStream
+public class EncryptedCloudStream : IStream
 {
-    public override void write(String data)
+    private IStream stream;
+
+    public EncryptedCloudStream(IStream stream)
+    {
+        this.stream = stream;
+    }
+
+    public void write(String data)
     {
         var encrypted = encrypt(data);
-        base.write(encrypted);
+        stream.write(encrypted);
     }
     private String encrypt(String data)
     {
