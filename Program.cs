@@ -265,31 +265,38 @@
 
 // Composite
 
-var group1 = new Group();
-group1.Add(new Shape()); // Square
-group1.Add(new Shape()); // Square
+// var group1 = new Group();
+// group1.Add(new Shape()); // Square
+// group1.Add(new Shape()); // Square
 
-var group2 = new Group();
-group2.Add(new Shape()); // Circle
-group2.Add(new Shape()); // Circle
+// var group2 = new Group();
+// group2.Add(new Shape()); // Circle
+// group2.Add(new Shape()); // Circle
 
-var group3 = new Group();
-group3.Add(group1);
-group3.Add(group2);
-group3.Render();
+// var group3 = new Group();
+// group3.Add(group1);
+// group3.Add(group2);
+// group3.Render();
 
-var subTeam1 = new Team();
-subTeam1.add(new Truck());
-subTeam1.add(new HumanResource());
-subTeam1.add(new HumanResource());
+// var subTeam1 = new Team();
+// subTeam1.add(new Truck());
+// subTeam1.add(new HumanResource());
+// subTeam1.add(new HumanResource());
 
-var subTeam2 = new Team();
-subTeam2.add(new Truck());
-subTeam2.add(new HumanResource());
-subTeam2.add(new HumanResource());
+// var subTeam2 = new Team();
+// subTeam2.add(new Truck());
+// subTeam2.add(new HumanResource());
+// subTeam2.add(new HumanResource());
 
-var team = new Team();
-team.add(subTeam1);
-team.add(subTeam2);
+// var team = new Team();
+// team.add(subTeam1);
+// team.add(subTeam2);
 
-team.deploy();
+// team.deploy();
+
+// Other...
+
+// Adapter
+
+var imageView = new ImageView(new Image());
+imageView.Apply(new CaramelFilter(new Caramel())); // Adapter
