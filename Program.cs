@@ -275,3 +275,5 @@ group2.Add(new Shape()); // Circle
 
 var group3 = new Group();
 group3.Add(group1);
+group3.Add(group2);
+group3.Render();
