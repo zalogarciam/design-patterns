@@ -300,3 +300,7 @@
 
 var imageView = new ImageView(new Image());
 imageView.Apply(new CaramelFilter(new Caramel())); // Adapter
+
+var emailClient = new EmailClient();
+emailClient.addProvider(new GmailProvider(new GmailClient()));
+emailClient.downloadEmails();
