@@ -255,10 +255,23 @@
 
 // Visitor
 
-var document = new HtmlDocumento();
-document.Add(new HeadingNode());
-document.Add(new AnchorNode());
-document.Execute(new HighLightOperation());
-document.Execute(new PlainTextOperation());
+// var document = new HtmlDocumento();
+// document.Add(new HeadingNode());
+// document.Add(new AnchorNode());
+// document.Execute(new HighLightOperation());
+// document.Execute(new PlainTextOperation());
 
-WavFile.read("File");
+// WavFile.read("File");
+
+// Composite
+
+var group1 = new Group();
+group1.Add(new Shape()); // Square
+group1.Add(new Shape()); // Square
+
+var group2 = new Group();
+group2.Add(new Shape()); // Circle
+group2.Add(new Shape()); // Circle
+
+var group3 = new Group();
+group3.Add(group1);
