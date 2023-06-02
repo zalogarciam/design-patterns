@@ -1,19 +1,25 @@
-public class Group
+public class Group : IComponent
 {
-    private List<Object> Objects = new List<Object>();
-    public void Add(Object shape)
+    private List<IComponent> Components = new List<IComponent>();
+    public void Add(IComponent component)
     {
-        Objects.Add(shape);
+        Components.Add(component);
+    }
+
+    public void Move()
+    {
+        foreach (var component in Components)
+        {
+            component.Move();
+        }
     }
 
     public void Render()
     {
-        foreach (var obj in Objects)
+        foreach (var component in Components)
         {
-            if (obj.GetType() == typeof(Shape))
-                ((Shape)obj).Render();
-            else
-                ((Group)obj).Render();
+            component.Render();
         }
     }
+
 }
