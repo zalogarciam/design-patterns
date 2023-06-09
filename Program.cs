@@ -329,5 +329,11 @@
 
 // DemoFacade.show();
 
-var serviceAPI = new TwitterAPI("key", "secret");
-serviceAPI.Get();
+// var serviceAPI = new TwitterAPI("key", "secret");
+// serviceAPI.Get();
+
+// Flyweight
+
+var service = new PointService();
+foreach (var point in service.GetPoints())
+    point.Draw();
