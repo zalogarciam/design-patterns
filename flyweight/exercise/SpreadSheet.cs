@@ -10,9 +10,11 @@ public class SpreadSheet
     private readonly bool isBold = false;
 
     private Cell[,] cells;
+    private CellFactory cellFactory;
 
-    public SpreadSheet()
+    public SpreadSheet(CellFactory cellFactory)
     {
+        this.cellFactory = cellFactory;
         cells = new Cell[MAX_ROWS, MAX_COLS];
         generateCells();
     }
@@ -21,15 +23,18 @@ public class SpreadSheet
     {
         ensureCellExists(row, col);
 
-        cells[row,col].setContent(content);
+        cells[row, col].setContent(content);
     }
 
     public void setFontFamily(int row, int col, String fontFamily)
     {
         ensureCellExists(row, col);
 
-        var cell = cells[row,col];
-        cells[row,col].setFontFamily(fontFamily);
+        var cell = cells[row, col];
+
+        var currentSharedCell = cell.getSharedCell();
+        var sharedCell = cellFactory.GetSharedCell(currentSharedCell.getFontSize(), fontFamily, currentSharedCell.isBold);
+        cells[row, col].setSharedCell(sharedCell);
     }
 
     private void ensureCellExists(int row, int col)
@@ -46,9 +51,9 @@ public class SpreadSheet
         for (var row = 0; row < MAX_ROWS; row++)
             for (var col = 0; col < MAX_COLS; col++)
             {
-                var cell = new Cell(row, col);
-                cell.setFontFamily(fontFamily);
-                cells[row,col] = cell;
+                var cell = new Cell(row, col, new SharedCell("Times New Roman", 12, false));
+                cell.getSharedCell().setFontFamily(fontFamily);
+                cells[row, col] = cell;
             }
     }
 
@@ -56,6 +61,6 @@ public class SpreadSheet
     {
         for (var row = 0; row < MAX_ROWS; row++)
             for (var col = 0; col < MAX_COLS; col++)
-                cells[row,col].render();
+                cells[row, col].render();
     }
 }

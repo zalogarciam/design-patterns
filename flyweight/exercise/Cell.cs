@@ -3,14 +3,14 @@ public class Cell
     private readonly int row;
     private readonly int column;
     private String content;
-    private String fontFamily;
-    private int fontSize;
-    private bool isBold { get; set; }
 
-    public Cell(int row, int column)
+    private SharedCell sharedCell;
+
+    public Cell(int row, int column, SharedCell sharedCell)
     {
         this.row = row;
         this.column = column;
+        this.sharedCell = sharedCell;
     }
 
     public String getContent()
@@ -23,29 +23,18 @@ public class Cell
         this.content = content;
     }
 
-    public String getFontFamily()
+    public SharedCell getSharedCell()
     {
-        return fontFamily;
+        return sharedCell;
     }
 
-    public void setFontFamily(String fontFamily)
+    public void setSharedCell(SharedCell sharedCell)
     {
-        this.fontFamily = fontFamily;
+        this.sharedCell = sharedCell;
     }
-
-    public int getFontSize()
-    {
-        return fontSize;
-    }
-
-    public void setFontSize(int fontSize)
-    {
-        this.fontSize = fontSize;
-    }
-
 
     public void render()
     {
-        System.Console.WriteLine("({0}, {1}): {2} [{3}]\n", row, column, content, fontFamily);
+        System.Console.WriteLine("({0}, {1}): {2} [{3}]\n", row, column, content, sharedCell.getFontFamily());
     }
 }
