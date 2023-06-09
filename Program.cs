@@ -324,5 +324,10 @@
 // server.Send(authToken, message, "target");
 // connection.Disconnect();
 
-var server = new NotificationService();
-server.Send("Hello World", "target");
+// var server = new NotificationService();
+// server.Send("Hello World", "target");
+
+// DemoFacade.show();
+
+var serviceAPI = new TwitterAPI();
+serviceAPI.Get();
