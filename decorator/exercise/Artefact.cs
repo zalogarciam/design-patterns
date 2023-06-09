@@ -1,14 +1,17 @@
 
-public class Artefact {
+public class Artefact : IArtefact
+{
     private String name;
     private bool hasError;
     private bool isMain;
 
-    public Artefact(String name) {
+    public Artefact(String name)
+    {
         this.name = name;
     }
 
-    public String render() {
+    public String render()
+    {
         // The current implementation is not easily extensible. If tomorrow we need
         // to support other special markers, we have to come back and modify this class.
         //
@@ -23,17 +26,20 @@ public class Artefact {
         // this class. Over time, the code in this class gets more and more convoluted
         // with several if statements and additional fields.
 
-        String errorIcon = hasError ? "[Error]" : "";
-        String mainIcon = isMain ? "[Main]" : "";
+        // String errorIcon = hasError ? "[Error]" : "";
+        // String mainIcon = isMain ? "[Main]" : "";
 
-        return String.Format("%s %s %s", name, errorIcon, mainIcon);
+        // return String.Format("Name:{0} Error:{1} Main:{2}", name, errorIcon, mainIcon);
+        return name;
     }
 
-    public void setHasError(bool hasError) {
-        this.hasError = hasError;
-    }
+    // public void setHasError(bool hasError)
+    // {
+    //     this.hasError = hasError;
+    // }
 
-    public void setMain(bool main) {
-        isMain = main;
-    }
+    // public void setMain(bool main)
+    // {
+    //     isMain = main;
+    // }
 }

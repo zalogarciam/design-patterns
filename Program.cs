@@ -310,5 +310,7 @@
 // var cloudStream = new EncryptedCloudStream();
 // cloudStream.write("Data");
 
-var stream = new EncryptedCloudStream(new CompressCloudStream(new CloudStream()));
-stream.write("1234-1234-1234-1234");
+// var stream = new EncryptedCloudStream(new CompressCloudStream(new CloudStream()));
+// stream.write("1234-1234-1234-1234");
+
+Demo.show();
