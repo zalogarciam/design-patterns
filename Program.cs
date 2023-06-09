@@ -317,9 +317,12 @@
 
 // Facade
 
-var server = new NotificationServer();
-var connection= server.Connect("IP");
-var authToken = server.Authenticate("appId", "key");
-var message = new Message("Hello");
-server.Send(authToken, message, "target");
-connection.Disconnect();
+// var server = new NotificationServer();
+// var connection= server.Connect("IP");
+// var authToken = server.Authenticate("appId", "key");
+// var message = new Message("Hello");
+// server.Send(authToken, message, "target");
+// connection.Disconnect();
+
+var server = new NotificationService();
+server.Send("Hello World", "target");
