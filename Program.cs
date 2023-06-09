@@ -313,4 +313,13 @@
 // var stream = new EncryptedCloudStream(new CompressCloudStream(new CloudStream()));
 // stream.write("1234-1234-1234-1234");
 
-Demo.show();
+// Demo.show();
+
+// Facade
+
+var server = new NotificationServer();
+var connection= server.Connect("IP");
+var authToken = server.Authenticate("appId", "key");
+var message = new Message("Hello");
+server.Send(authToken, message, "target");
+connection.Disconnect();
