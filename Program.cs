@@ -338,6 +338,8 @@
 // foreach (var point in service.GetPoints())
 //     point.Draw();
 
-var service = new PointService(new PointIconFactory());
-foreach (var point in service.GetPoints())
-    point.Draw();
+// var service = new PointService(new PointIconFactory());
+// foreach (var point in service.GetPoints())
+//     point.Draw();
+
+DemoFly.show();
