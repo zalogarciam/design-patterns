@@ -329,5 +329,5 @@
 
 // DemoFacade.show();
 
-var serviceAPI = new TwitterAPI();
+var serviceAPI = new TwitterAPI("key", "secret");
 serviceAPI.Get();
