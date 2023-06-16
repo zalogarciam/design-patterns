@@ -1,4 +1,4 @@
-public abstract class RemoteControl
+public class RemoteControl
 {
     // RemoteControl
     // - SonyRemoteControl
@@ -6,6 +6,20 @@ public abstract class RemoteControl
     // - AdvancedRemoteControl
     // -- SonyAdvancedRemoteControl
     // -- SamsungAdvancedRemoteControl
-    public abstract void TurnOn() { }
-    public abstract void TurnOff() { }
+
+    protected IDevice Device;
+
+    public RemoteControl(IDevice device)
+    {
+        Device = device;
+    }
+
+    public void TurnOn()
+    {
+        Device.TurnOn();
+    }
+    public void TurnOff()
+    {
+        Device.TurnOff();
+    }
 }

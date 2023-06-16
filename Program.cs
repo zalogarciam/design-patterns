@@ -342,4 +342,15 @@
 // foreach (var point in service.GetPoints())
 //     point.Draw();
 
-DemoFly.show();
+// DemoFly.show();
+
+// Bridge
+
+var remoteControl = new RemoteControl(new SonyTV());
+remoteControl.TurnOn();
+
+var advRemoteControl = new AdvancedRemoteControl(new SonyTV());
+advRemoteControl.TurnOn();
+
+var samsungRemoteControl = new AdvancedRemoteControl(new SamsungTV());
+samsungRemoteControl.TurnOn();
