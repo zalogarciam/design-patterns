@@ -376,6 +376,15 @@
 
 // Prototype
 
-var context = new ContextMenu();
-IComponente circle = new Circle(1);
-context.Duplicate(circle);
+// var context = new ContextMenu();
+// IComponente circle = new Circle(1);
+// context.Duplicate(circle);
+
+var context = new MyContextMenu(new Timeline());
+IIComponent clip = new Clip();
+IIComponent audio = new Audio();
+IIComponent text = new Text("text");
+
+context.duplicate(clip);
+context.duplicate(audio);
+context.duplicate(text);
