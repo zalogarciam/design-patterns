@@ -365,7 +365,7 @@ fileNames.Add("c");
 
 foreach (var file in fileNames)
 {
-    library.Add(new Ebook(file));
+    library.Add(new LoggingEbookProxy(file));
 }
 
 library.OpenEbook("a");

@@ -1,10 +1,10 @@
 public class Library
 {
 
-    private Dictionary<string, Ebook> ebooks = new Dictionary<string, Ebook>();
-    public void Add(Ebook ebook)
+    private Dictionary<string, IEBook> ebooks = new Dictionary<string, IEBook>();
+    public void Add(IEBook ebook)
     {
-        ebooks.Add(ebook.FileName, ebook);
+        ebooks.Add(ebook.GetFileName(), ebook);
     }
 
     public void OpenEbook(string fileName)
