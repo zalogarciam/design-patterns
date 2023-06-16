@@ -346,11 +346,26 @@
 
 // Bridge
 
-var remoteControl = new RemoteControl(new SonyTV());
-remoteControl.TurnOn();
+// var remoteControl = new RemoteControl(new SonyTV());
+// remoteControl.TurnOn();
 
-var advRemoteControl = new AdvancedRemoteControl(new SonyTV());
-advRemoteControl.TurnOn();
+// var advRemoteControl = new AdvancedRemoteControl(new SonyTV());
+// advRemoteControl.TurnOn();
 
-var samsungRemoteControl = new AdvancedRemoteControl(new SamsungTV());
-samsungRemoteControl.TurnOn();
+// var samsungRemoteControl = new AdvancedRemoteControl(new SamsungTV());
+// samsungRemoteControl.TurnOn();
+
+// Proxy
+
+var library = new Library();
+var fileNames = new List<string>();
+fileNames.Add("a");
+fileNames.Add("b");
+fileNames.Add("c");
+
+foreach (var file in fileNames)
+{
+    library.Add(new Ebook(file));
+}
+
+library.OpenEbook("a");
