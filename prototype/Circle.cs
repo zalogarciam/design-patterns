@@ -1,15 +1,18 @@
 public class Circle : IComponente
 {
+    public Circle(int radius)
+    {
+        Radius = radius;
+    }
     public int Radius { get; set; }
     public void Render()
     {
         System.Console.WriteLine("Rendering a circle");
     }
 
-    public IComponent Clone()
+    public IComponente Clone()
     {
-        Circle newCircle = new Circle();
-        newCircle.Radius = source.Radius;
+        IComponente newCircle = new Circle(Radius);
         return newCircle;
     }
 }

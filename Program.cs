@@ -372,4 +372,10 @@
 
 // library.OpenEbook("a");
 
-DemoProxy.show();
+// DemoProxy.show();
+
+// Prototype
+
+var context = new ContextMenu();
+IComponente circle = new Circle(1);
+context.Duplicate(circle);

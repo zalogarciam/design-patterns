@@ -11,6 +11,7 @@ public class ContextMenu
 
     public void Duplicate(IComponente component)
     {
-        IComponent newComponent = component.Clone();
+        IComponente newComponent = component.Clone();
+        System.Console.WriteLine("Duplicated...");
     }
 }
