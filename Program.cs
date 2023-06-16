@@ -357,15 +357,17 @@
 
 // Proxy
 
-var library = new Library();
-var fileNames = new List<string>();
-fileNames.Add("a");
-fileNames.Add("b");
-fileNames.Add("c");
+// var library = new Library();
+// var fileNames = new List<string>();
+// fileNames.Add("a");
+// fileNames.Add("b");
+// fileNames.Add("c");
 
-foreach (var file in fileNames)
-{
-    library.Add(new LoggingEbookProxy(file));
-}
+// foreach (var file in fileNames)
+// {
+//     library.Add(new LoggingEbookProxy(file));
+// }
 
-library.OpenEbook("a");
+// library.OpenEbook("a");
+
+DemoProxy.show();
