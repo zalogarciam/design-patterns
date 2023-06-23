@@ -407,5 +407,7 @@
 
 // Factory Method
 
-new ProductsController().ListProducts();
-new SharpController().ListProducts();
+// new ProductsController().ListProducts();
+// new SharpController().ListProducts();
+
+DemoCalendar.show();
