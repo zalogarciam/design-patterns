@@ -1,6 +1,7 @@
-public class DemoMuscle {
-    public static void show() {
-        var homePage = new HomePage();
-        homePage.setGoal(Goal.WEIGHT_LOSS);
+public class DemoMuscle
+{
+    public static void show()
+    {
+        new HomePage().setGoal(new WeighLossWidgetFactory());
     }
 }

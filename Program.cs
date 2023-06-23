@@ -414,5 +414,7 @@
 
 // Abstract factory
 
-new ContactForm().render(new MaterialWidgetFactory());
-new ContactForm().render(new AntWidgetFactory());
+// new ContactForm().render(new MaterialWidgetFactory());
+// new ContactForm().render(new AntWidgetFactory());
+
+DemoMuscle.show();
