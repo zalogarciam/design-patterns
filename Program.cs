@@ -410,4 +410,9 @@
 // new ProductsController().ListProducts();
 // new SharpController().ListProducts();
 
-DemoCalendar.show();
+// DemoCalendar.show();
+
+// Abstract factory
+
+new ContactForm().render(new MaterialWidgetFactory());
+new ContactForm().render(new AntWidgetFactory());

@@ -2,6 +2,6 @@ public class AntButton : IButton
 {
     public void render()
     {
-        System.Console.WriteLine("Material button");
+        System.Console.WriteLine("Ant button");
     }
 }
