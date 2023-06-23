@@ -421,14 +421,16 @@
 
 // Builder
 
-var presentation = new Presentation();
-presentation.AddSlide(new Slide("Slide 1"));
-presentation.AddSlide(new Slide("Slide 2"));
-// presentation.Export(new PdfDocumentBuilder());
-var builder = new PdfDocumentBuilder();
-presentation.Export(builder);
-builder.getPdfDocument();
+// var presentation = new Presentation();
+// presentation.AddSlide(new Slide("Slide 1"));
+// presentation.AddSlide(new Slide("Slide 2"));
+// // presentation.Export(new PdfDocumentBuilder());
+// var builder = new PdfDocumentBuilder();
+// presentation.Export(builder);
+// builder.getPdfDocument();
 
-var builder2 = new MovieBuilder();
-presentation.Export(builder2);
-builder2.getMovie();
+// var builder2 = new MovieBuilder();
+// presentation.Export(builder2);
+// builder2.getMovie();
+
+DemoBuilder.show();

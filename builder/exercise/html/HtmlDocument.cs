@@ -9,12 +9,12 @@ public class HtmlDoc
         elements.Add(element);
     }
 
-    public String toString()
+    public String copy()
     {
         var builder = new StringBuilder();
         builder.Append("<html>");
         foreach (HtmlElement element in elements)
-            builder.Append(element.ToString());
+            builder.Append(element.copy());
 
         builder.Append("</html>");
         return builder.ToString();

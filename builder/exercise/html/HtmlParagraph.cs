@@ -7,7 +7,7 @@ public class HtmlParagraph : HtmlElement
         this.text = text;
     }
 
-    public String toString()
+    public override String copy()
     {
         return String.Format("<p>{0}</p>", text);
     }
