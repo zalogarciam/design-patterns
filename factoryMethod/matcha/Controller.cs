@@ -1,6 +1,6 @@
 public class Controller {
     public void Render(string viewName, Dictionary<string, object> context){
-        var engine = CreateViewEngine();
+        var engine = CreateViewEngine(); // View factory
         var html = engine.Render(viewName, context);
         System.Console.WriteLine(html);
     }
