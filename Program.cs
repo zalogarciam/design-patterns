@@ -417,4 +417,18 @@
 // new ContactForm().render(new MaterialWidgetFactory());
 // new ContactForm().render(new AntWidgetFactory());
 
-DemoMuscle.show();
+// DemoMuscle.show();
+
+// Builder
+
+var presentation = new Presentation();
+presentation.AddSlide(new Slide("Slide 1"));
+presentation.AddSlide(new Slide("Slide 2"));
+// presentation.Export(new PdfDocumentBuilder());
+var builder = new PdfDocumentBuilder();
+presentation.Export(builder);
+builder.getPdfDocument();
+
+var builder2 = new MovieBuilder();
+presentation.Export(builder2);
+builder2.getMovie();
