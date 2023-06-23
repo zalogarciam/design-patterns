@@ -380,11 +380,19 @@
 // IComponente circle = new Circle(1);
 // context.Duplicate(circle);
 
-var context = new MyContextMenu(new Timeline());
-IIComponent clip = new Clip();
-IIComponent audio = new Audio();
-IIComponent text = new Text("text");
+// var context = new MyContextMenu(new Timeline());
+// IIComponent clip = new Clip();
+// IIComponent audio = new Audio();
+// IIComponent text = new Text("text");
 
-context.duplicate(clip);
-context.duplicate(audio);
-context.duplicate(text);
+// context.duplicate(clip);
+// context.duplicate(audio);
+// context.duplicate(text);
+
+// Singleton
+
+var configManager = ConfigManager.GetInstance();
+configManager.Set("name", "Mosh");
+
+var other = ConfigManager.GetInstance();
+System.Console.WriteLine(other.Get("name"));
