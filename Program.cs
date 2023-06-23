@@ -391,16 +391,21 @@
 
 // Singleton
 
-var configManager = ConfigManager.GetInstance();
-configManager.Set("name", "Mosh");
+// var configManager = ConfigManager.GetInstance();
+// configManager.Set("name", "Mosh");
 
-var other = ConfigManager.GetInstance();
-System.Console.WriteLine(other.Get("name"));
+// var other = ConfigManager.GetInstance();
+// System.Console.WriteLine(other.Get("name"));
 
-var logManager = LogManager.GetInstance();
-logManager.write("Log");
-logManager.write("Log2");
+// var logManager = LogManager.GetInstance();
+// logManager.write("Log");
+// logManager.write("Log2");
 
-var logManager2 = LogManager.GetInstance();
-logManager.write("Log3");
-logManager.write("Log4");
+// var logManager2 = LogManager.GetInstance();
+// logManager.write("Log3");
+// logManager.write("Log4");
+
+// Factory Method
+
+new ProductsController().ListProducts();
+new SharpController().ListProducts();

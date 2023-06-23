@@ -1,4 +1,4 @@
-public class ProductsController : Controller
+public class SharpController : Controller
 {
     public void ListProducts()
     {
@@ -6,5 +6,10 @@ public class ProductsController : Controller
         Dictionary<string, object> context = new Dictionary<string, object>();
         // context.put(products)
         Render("products.html", context);
+    }
+    
+    protected override IViewEngine CreateViewEngine()
+    {
+        return new SharpViewEngine();
     }
 }
